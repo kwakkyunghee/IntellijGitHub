@@ -1,18 +1,12 @@
 class code {
-    public int solution(int left, int right) {
+    public int solution(int n) {
         int answer = 0;
 
-        for(int i = left; i <= right; i++) {
-            int cnt = 0;
-
-            for(int j = 1; j <= i; j++) {
-                if(i % j == 0) cnt++;
+        for(int i=1; i<=n; i++){
+            if(n%i==0){
+                answer+=i;
             }
-
-            if(cnt % 2 == 0) answer += i;
-            else answer -= i;
         }
-
         return answer;
     }
 }
