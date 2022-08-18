@@ -1,13 +1,18 @@
 class code {
-    public int solution(int n) {
+    public int solution(long num) {
         int answer = 0;
 
-        while(true){
-            answer+=n%10;
-            if(n<10){
-                break;
+        while(num!=1){
+            if(num%2==0){
+                num/=2;
             }
-            n=n/10;
+            else {
+                num=num*3+1;
+            }
+            answer++;
+            if(answer>500){
+                return -1;
+            }
         }
 
         return answer;
