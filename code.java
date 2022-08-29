@@ -1,21 +1,13 @@
 class code {
-    public int solution(long num) {
-        int answer = 0;
+    public double solution(int[] arr) {
+        double answer = 0;
+        double a=0;
 
-        while(num!=1){
-            if(num%2==0){
-                num/=2;
-            }
-            else {
-                num=num*3+1;
-            }
-            answer++;
-            if(answer>500){
-                return -1;
-            }
+        for(int i=0; i<arr.length; i++){
+            a+=arr[i];
         }
+        answer=a/arr.length;
 
         return answer;
     }
 }
-
