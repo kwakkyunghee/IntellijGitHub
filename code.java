@@ -1,9 +1,19 @@
 class code {
-    public int solution(int[] a, int[] b) {
-        int answer = 0;
-        for(int i=0; i<a.length; i++){
-            answer+=a[i]*b[i];
+    public int solution(int[][] sizes) {
+        int max_row=0; //가로 최대 길이
+        int max_col=0; //세로 최대 길이
+
+        for(int i=0; i<sizes.length; i++){
+            if(sizes[i][0]<sizes[i][1]){
+                int a=sizes[i][0];
+                sizes[i][0]=sizes[i][1];
+                sizes[i][1]=a;
+            }
+            if(max_row<sizes[i][0]) max_row = sizes[i][0];
+            if(max_col<sizes[i][1]) max_col = sizes[i][1];
         }
-        return answer;
+
+        return max_row*max_col;
     }
 }
+
